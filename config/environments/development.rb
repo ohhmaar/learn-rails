@@ -27,8 +27,11 @@ LearnRails::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  # Send email in development mode.
+  config.action_mailer.perform_deliveries = true
+
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com"
+    address: "smtp.gmail.com",
     port: 587,
     domain: ENV["DOMAIN_NAME"],
     authentication: "plain",
